@@ -20,8 +20,8 @@ const About = () => {
     },
     {
       icon: <Heart className="text-accent" size={24} />,
-      title: "Passions",
-      desc: "Problem Solving",
+      title: "Goal",
+      desc: "Strengthening DSA & problem-solving",
       color: "bg-accent/10",
       gradient: "from-accent to-pink-600"
     }
@@ -59,10 +59,10 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-40 blur-md transition-all duration-500 rounded-2xl" />
             
             <div className="relative bg-white/[0.03] backdrop-blur-xl p-6 rounded-2xl border border-white/5 border-l-4 border-l-primary h-full">
-              <p className="text-white/80 text-lg leading-relaxed mb-6">
-                I'm a <span className="text-primary font-bold">B.Tech Computer Science & Engineering</span> student with a deep-rooted passion for <span className="text-secondary font-bold">Data Science</span> and <span className="text-secondary font-bold">Software Development</span>. I thrive on the challenge of transforming complex data into actionable insights that drive real-world impact.
+              <p className="text-white/80 text-lg leading-relaxed mb-2">
+                A <span className="text-primary font-bold">B.Tech Computer Science & Engineering</span> student with a deep-rooted passion for <span className="text-secondary font-bold">Data Science</span> and <span className="text-secondary font-bold">Software Development</span>. Focused on turning complex data into <span className="text-accent font-bold">meaningful, actionable insights</span> that drive real-world decisions.
               </p>
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
+              <p className="text-white/80 text-lg leading-relaxed mb-4">
                 My journey is marked by a <span className="text-accent font-bold italic underline decoration-accent/30 decoration-2 underline-offset-4">hands-on approach</span>. I leverage tools like <span className="bg-white/5 px-2 py-1 rounded text-primary">Power BI</span>, <span className="bg-white/5 px-2 py-1 rounded text-secondary">Excel</span>, and <span className="bg-white/5 px-2 py-1 rounded text-accent">Machine Learning</span> to architect data-driven systems that empower decision-makers.
               </p>
 

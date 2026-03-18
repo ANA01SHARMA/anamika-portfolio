@@ -7,12 +7,12 @@ import Projects from './components/Projects';
 import Training from './components/Training';
 import Certificates from './components/Certificates';
 import Achievements from './components/Achievements';
+import ExtraCurricular from './components/ExtraCurricular';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  console.log('App component rendering');
   return (
     <div className="bg-background text-white selection:bg-primary/30 min-h-screen">
       <div className="glow-overlay" />
@@ -25,6 +25,7 @@ function App() {
         <Training />
         <Certificates />
         <Achievements />
+        <ExtraCurricular />
         <Education />
         <Contact />
       </main>

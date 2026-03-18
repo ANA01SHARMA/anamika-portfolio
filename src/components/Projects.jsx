@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github, Code2, Layout, Database, Smartphone } from 'lucide-react';
 
 // Import project images
-import chronicDiseaseImg from '../assets/chronic_disease.png';
-import airPollutionImg from '../assets/air_pollution.png';
-import chatServerImg from '../assets/chat_server.png';
-import forcescopeImg from '../assets/forcescope.png';
+import chronicDiseaseImg from '../assets/chronic_disease_updated.png';
+import airPollutionImg from '../assets/air_pollution_code.png';
+import chatServerImg from '../assets/chat_server_code.png';
+import forcescopeImg from '../assets/forcescope_dynamic.png';
 
 const Projects = () => {
   const projects = [
@@ -39,9 +39,9 @@ const Projects = () => {
     },
     { 
       title: "ForceScope: Police Use of Force", 
-      desc: "Power BI dashboard visualizing statistical trends and incident patterns in police use of force for data-driven societal analysis.", 
+      desc: "Excel dashboard visualizing statistical trends and incident patterns in police use of force for data-driven societal analysis.", 
       image: forcescopeImg, 
-      tech: ["Power BI", "Data Visualization", "Dashboard Design"], 
+      tech: ["Excel", "Data Visualization", "Dashboard Design"], 
       live: "https://www.linkedin.com/posts/anamika01sharma_datavisualization-dashboarddesign-powerbi-activity-7316721777559183360-xHUP", 
       github: "https://github.com/ANA01SHARMA/ForceScope-Analyzing-Trends-in-Police-Use-of-Force",
       gradient: "from-orange-500 via-amber-500 to-yellow-500"
@@ -49,7 +49,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="section-padding relative overflow-hidden">
+    <section id="projects" className="py-8 md:py-12 px-4 max-w-[1400px] mx-auto relative overflow-hidden">
       {/* Background Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] -z-10" />
 
@@ -58,13 +58,13 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-10"
+        className="text-center mb-6"
       >
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight pb-2 drop-shadow-[0_0_15px_rgba(139,92,246,0.2)]">Featured Projects</h2>
         <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full" />
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
+      <div className="grid lg:grid-cols-2 gap-6 mx-auto px-4">
         {projects.map((project, index) => (
           <motion.div 
             key={index}
@@ -78,13 +78,13 @@ const Projects = () => {
             <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-10 group-hover:opacity-100 blur-sm group-hover:blur-md transition-all duration-500 rounded-2xl`} />
             
             <div className="relative bg-[#0b0f19] rounded-2xl overflow-hidden h-full flex flex-col md:flex-row border border-white/5">
-              {/* Project Image - Increased width */}
-              <div className="h-48 md:h-auto md:w-56 lg:w-64 overflow-hidden relative flex-shrink-0">
+              {/* Project Image - Final polished width */}
+              <div className="h-48 md:h-auto md:w-60 lg:w-64 overflow-hidden relative flex-shrink-0">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0b0f19]/60 md:to-transparent" />
               </div>
 
-              {/* Project Content - Slightly more padding and larger text */}
+              {/* Project Content - Polished padding */}
               <div className="p-6 flex-grow flex flex-col justify-between">
                 <div>
                   <div className="flex flex-wrap gap-1.5 mb-3">

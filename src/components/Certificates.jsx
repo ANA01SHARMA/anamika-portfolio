@@ -1,13 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, ShieldCheck, Cpu } from 'lucide-react';
+import automationRpaCert from '../assets/automation_rpa_cert.png';
+import cloudComputingCert from '../assets/cloud_computing_cert.png';
+import dsaCert from '../assets/dsa_cert.png';
+import javaProgrammingCert from '../assets/java_programming_cert.png';
 
 const Certificates = () => {
   const certs = [
     { 
       title: "Certified Essentials Automation Professional", 
       issuer: "Automation Anywhere", 
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800", 
+      image: automationRpaCert, 
       icon: <Award className="text-secondary" />,
       link: "/Automation Anywhere RPA.pdf",
       gradient: "from-blue-500 via-blue-400 to-indigo-500"
@@ -15,7 +19,7 @@ const Certificates = () => {
     { 
       title: "Cloud Computing", 
       issuer: "NPTEL", 
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800", 
+      image: cloudComputingCert, 
       icon: <ShieldCheck className="text-primary" />,
       link: "/Cloud Computing NPTEL.pdf",
       gradient: "from-purple-500 via-pink-500 to-secondary"
@@ -23,7 +27,7 @@ const Certificates = () => {
     { 
       title: "Data Structures and Algorithms", 
       issuer: "NeoColab", 
-      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=800", 
+      image: dsaCert, 
       icon: <Cpu className="text-accent" />,
       link: "/Data Structures and Algorithm_NeoColab.pdf",
       gradient: "from-pink-500 via-rose-500 to-accent"
@@ -31,7 +35,7 @@ const Certificates = () => {
     { 
       title: "Java Programming", 
       issuer: "IamNeo", 
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800", 
+      image: javaProgrammingCert, 
       icon: <Cpu className="text-primary" />,
       link: "/Java IamNeo.pdf",
       gradient: "from-sky-500 via-blue-500 to-indigo-600"

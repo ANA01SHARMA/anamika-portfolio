@@ -1,8 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Database, ExternalLink, FileText, Calendar, MapPin, Award, Building2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Database, ExternalLink, FileText, Calendar, MapPin, Award, Building2, X } from 'lucide-react';
+import trainingCertImg from '../assets/training_certificate.png';
 
 const Training = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section id="training" className="section-padding relative overflow-hidden">
       {/* Background Decorative Glow */}
@@ -75,34 +78,57 @@ const Training = () => {
                   </div>
                 </div>
 
-                {/* Right side: Timeline */}
-                <div className="lg:w-64 flex-shrink-0 space-y-4 lg:border-l lg:border-white/5 lg:pl-8">
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/40 flex items-center gap-2">
-                    <Calendar size={14} className="text-secondary" /> Timeline
-                  </h4>
-                  <div className="space-y-3 text-white/70">
-                    <div className="text-xs">
-                      <span className="block text-white/40 mb-1 uppercase tracking-tighter">Duration</span>
-                      <span className="text-white font-medium">10 June – 22 July 2025</span>
+                {/* Right side: Timeline & Certificate Preview */}
+                <div className="lg:w-80 flex-shrink-0 space-y-6 lg:border-l lg:border-white/5 lg:pl-8">
+                  {/* Timeline */}
+                  <div className="space-y-4">
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/40 flex items-center gap-2">
+                      <Calendar size={14} className="text-secondary" /> Timeline
+                    </h4>
+                    <div className="space-y-3 text-white/70">
+                      <div className="text-xs">
+                        <span className="block text-white/40 mb-1 uppercase tracking-tighter">Duration</span>
+                        <span className="text-white font-medium">10 June – 22 July 2025</span>
+                      </div>
+                      <div className="text-xs">
+                        <span className="block text-white/40 mb-1 uppercase tracking-tighter">Issued</span>
+                        <span className="text-white font-medium">13 August 2025</span>
+                      </div>
                     </div>
-                    <div className="text-xs">
-                      <span className="block text-white/40 mb-1 uppercase tracking-tighter">Issued</span>
-                      <span className="text-white font-medium">13 August 2025</span>
-                    </div>
+                  </div>
+
+                  {/* Certificate Image Preview */}
+                  <div className="space-y-3">
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/40 flex items-center gap-2">
+                      <FileText size={14} className="text-accent" /> Certificate Preview
+                    </h4>
+                    <motion.div 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setIsModalOpen(true)}
+                      className="relative rounded-xl overflow-hidden cursor-pointer group/img"
+                    >
+                      <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+                        <span className="text-white text-xs font-bold bg-black/50 px-3 py-1.5 rounded-full backdrop-blur-sm">Click to View</span>
+                      </div>
+                      <img 
+                        src={trainingCertImg} 
+                        alt="Training Certificate" 
+                        className="w-full h-auto object-cover rounded-xl border border-white/10 group-hover/img:border-primary/30 transition-all duration-300"
+                      />
+                    </motion.div>
                   </div>
                 </div>
               </div>
 
               {/* Bottom buttons */}
               <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-white/5">
-                <a 
-                  href="/Java and MySQL_Application Development.pdf#toolbar=0" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={() => setIsModalOpen(true)}
                   className="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-xl flex items-center gap-2 hover:bg-primary/80 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/10"
                 >
                   <FileText size={18} /> View Certificate
-                </a>
+                </button>
                 <a 
                   href="https://github.com/ANA01SHARMA/Chat-Server-using-Java" 
                   target="_blank" 
@@ -116,6 +142,39 @@ const Training = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Modal for full certificate view */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsModalOpen(false)}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full bg-white/5 rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            >
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white hover:bg-white hover:text-black rounded-full transition-all"
+              >
+                <X size={24} />
+              </button>
+              <img 
+                src={trainingCertImg} 
+                alt="Full Certificate" 
+                className="w-full h-auto"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

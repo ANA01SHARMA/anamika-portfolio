@@ -14,6 +14,7 @@ const Navbar = () => {
     { name: 'Training', href: '#training' },
     { name: 'Certificates', href: '#certificates' },
     { name: 'Achievements', href: '#achievements' },
+    { name: 'Activities', href: '#activities' },
     { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -22,16 +23,17 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       const sections = navItems.map(item => item.name.toLowerCase());
+      let currentSection = 'home';
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
-            break;
+          if (rect.top <= 150) {
+            currentSection = section;
           }
         }
       }
+      setActiveSection(currentSection);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

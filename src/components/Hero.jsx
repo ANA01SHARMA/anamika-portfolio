@@ -11,18 +11,18 @@ const Hero = () => {
           <span className="text-primary font-medium tracking-wider glow-text uppercase">Hello There!</span>
           <h1 className="text-5xl md:text-7xl font-bold mt-4 mb-6 leading-tight">Hi, I'm <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Anamika Sharma</span></h1>
           <h2 className="text-xl md:text-2xl text-white/80 font-medium mb-6">Aspiring Software Developer | Data Science Enthusiast</h2>
-          <p className="text-white/60 text-lg mb-8 max-w-xl leading-relaxed">I am a Computer Science student passionate about building real-world software and data science projects while continuously learning modern technologies.</p>
+          <p className="text-white/60 text-lg mb-8 max-w-xl leading-relaxed">Building real-world software and data-driven solutions while continuously learning and exploring modern technologies.</p>
           <div className="flex flex-wrap gap-4 mb-10">
             <a 
-              href="/General CV AnamikaSharma.pdf#toolbar=0" 
+              href="/CV AnamikaSharma.pdf#toolbar=0" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-primary flex items-center gap-2"
             >
-              Preview CV <FileText size={18} />
+              Preview Resume <FileText size={18} />
             </a>
             <a 
-              href="/General CV AnamikaSharma.pdf" 
+              href="/CV AnamikaSharma.pdf" 
               download="Anamika_Sharma_CV.pdf" 
               className="btn-outline flex items-center gap-2"
             >

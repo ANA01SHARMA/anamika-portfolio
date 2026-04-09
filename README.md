@@ -45,7 +45,7 @@ The website highlights my work in **Software Development, Data Science, and Mach
 ## 📸 Preview
 
 Live Website:  
-👉 (Add your deployed link here)
+👉 https://anamika-portfolio-roan.vercel.app/
 
 ---
 
